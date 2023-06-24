@@ -19,6 +19,14 @@ font-family: Arial;
 font-weight: bold;
 }
 
+.home-work
+{
+    font-style: oblique;
+    text-align: center;
+    font-size: 24px;
+    text-shadow: 3px 3px  2px green;
+}
+
 .header-logo__img
 {
     display:block;
