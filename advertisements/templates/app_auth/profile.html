@@ -7,7 +7,7 @@
 <div class="col" style="margin: 50px;">
   <div class="display-2">
     <span class="badge bg-primary">Сейчас вы находитесь на сайте</span>
-    <span class="badge bg-primary">под ником "username".</span>
+    <span class="badge bg-primary">под ником "{{ user.get_username}}".</span>
   </div>
 </div>
 {% endblock content %}
