@@ -4,7 +4,7 @@ from django.core import validators
 from django.core.exceptions import ValidationError
 
 def validate_question_mark(value):
-    if len(value) > 0 and value[0] == '?':
+    if value.startswith('?'):
         raise ValidationError(
             ('Название не должно начинаться со знака вопроса')
         )

@@ -6,10 +6,10 @@ from .forms import AdvertisementForm
 def index(request):
     advertisements = Advertisement.objects.all()
     context = {'advertisements': advertisements}
-    return render(request, 'index.html', context)
+    return render(request, 'advertisement/index.html', context)
 
 def top_sellers(request):
-    return render(request, 'top-sellers.html')
+    return render(request, 'advertisement/top-sellers.html')
 
 def advertisement_post(request):
     if request.method == 'POST':
@@ -18,21 +18,12 @@ def advertisement_post(request):
             advertisement = Advertisement(**form.cleaned_data)
             advertisement.user = request.user
             advertisement.save()
-            url = reverse('index')
+            url = reverse('advertisement/index')
             return redirect(url)
     else:
         form = AdvertisementForm()
     context = {'form': form}
-    return render(request, 'advertisement-post.html', context)
+    return render(request, 'advertisement/advertisement-post.html', context)
 
 def advertisement(request):
-    return render(request, 'advertisement.html')
-
-def register(request):
-    return render(request, 'register.html')
-
-def login(request):
-    return render(request, 'login.html')
-
-def profile(request):
-    return render(request, 'profile.html')
+    return render(request, 'advertisement/advertisement.html')
