@@ -1,6 +1,7 @@
 from django.db import models
 from django.contrib import admin
 from django.contrib.auth import get_user_model
+from django.urls import reverse
 
 User = get_user_model()
 
@@ -45,3 +46,6 @@ class Advertisement(models.Model):
     
     class Meta:
         db_table = 'advertisements'
+
+    def get_absolute_url(self):
+        return reverse('advertisement', kwargs={'pk': self.pk})

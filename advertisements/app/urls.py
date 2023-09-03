@@ -6,6 +6,6 @@ urlpatterns = [
     path("", index),
     path("index.html", index, name='index'),
     path("top-sellers.html", top_sellers, name='top_sellers'),
-    path("advertisement.html", advertisement, name='advertisement'),
+    path("advertisement.html/<int:pk>", advertisement, name='advertisement'),
     path("advertisement-post.html", advertisement_post, name='advertisement_post'),
 ]
